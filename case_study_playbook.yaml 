@@ -1,0 +1,67 @@
+---
+- name: CASE STUDY
+  hosts: R1
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: Updating Port int gigabitethernet1
+      ios_config:
+        lines:
+          - description - Configure by Ansible
+        parents: interface GigabitEthernet1
+    
+# OSPF 
+    - name: Setting up Default OSPF
+      ios_config:
+        lines:
+          - router-id 192.168.56.104
+        parents: router ospf 100
+
+    - name: Configuring NEW OSPF network
+      ios_config:
+        lines:
+          - router-id 1.1.1.1
+          - network 192.168.56.0 0.0.0.255 area 0
+        parents: router ospf 1
+
+    - name: Ensuring SNMP strings are present
+      ios_config:
+        commands:
+          - snmp-server community ansible-public RO
+          - snmp-server community ansible-private RW
+
+      
+    - name: DISPLAYING THE RUNNING-CONFIG
+      ios_command:
+        commands:
+          - show running-config
+      register: config
+
+    - name: SAVE OUTPUT to ./backups/
+      copy:
+        content: "{{ config.stdout[0] }}"
+        dest: "backups/show_run_{{ inventory_hostname }}.txt"
+
+    - name: Test Ping CSR1kv
+      ios_ping:
+        dest: 192.168.56.104
+
+    - name: Test Ping CSR1kv to DEVASC
+      ios_ping:
+        dest: 192.168.56.105
+    
+    #Change ACL configuration and compare before and after configuration using 
+    - name: collect configuration (before)
+      ios_command:
+        commands:
+          - show run
+      register: result_before
+
+    - name: Creating the ACL rules
+      ios_config:
+          lines:
+            - access-list 110 deny icmp any any
+            - access-list 110 permit ip any any
+          before: no access-list 110
+          match: exact

@@ -1,0 +1,2 @@
+# Antigua, Jose Ricardo O - CPE41S1.
+R1 ansible_user=cisco ansible_password=cisco123! ansible_host=192.168.56.104
