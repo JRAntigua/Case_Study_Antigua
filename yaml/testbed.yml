@@ -1,0 +1,27 @@
+devices:
+  csr1kv:
+    connections:
+      cli:
+        ip: 192.168.56.104
+        protocol: ssh
+    credentials:
+      default:
+        password: '%ENC{w5PDpcOCw6fDpg==}'
+        username: cisco
+      enable:
+        password: '%ENC{w5PDpcOCw6fDpg==}'
+    os: ios
+    type: ios
+  csr1kv:
+    connections:
+      cli:
+        ip: 192.168.56.104
+        protocol: ssh
+    credentials:
+      default:
+        password: '%ENC{w5PDpcOCw6fDpg==}'
+        username: cisco
+      enable:
+        password: '%ENC{w5PDpcOCw6fDpg==}'
+    os: ios
+    type: ios

@@ -1,0 +1,44 @@
+
+2022-01-17 05:40:43,569: %UNICON-INFO: +++ R1 logfile yaml/acl//connection_R1.txt +++
+
+2022-01-17 05:40:43,569: %UNICON-INFO: +++ Unicon plugin ios +++
+
+2022-01-17 05:40:55,590: %UNICON-INFO: +++ connection to spawn: ssh -l cisco 192.168.56.104, id: 139713877821760 +++
+
+2022-01-17 05:40:55,591: %UNICON-INFO: connection to R1
+
+
+
+2022-01-17 05:47:50,594: %UNICON-INFO: +++ R1 logfile yaml/acl//connection_R1.txt +++
+
+2022-01-17 05:47:50,594: %UNICON-INFO: +++ Unicon plugin ios +++
+
+2022-01-17 05:48:02,602: %UNICON-INFO: +++ connection to spawn: ssh -l cisco 192.168.56.104, id: 139974673933840 +++
+
+2022-01-17 05:48:02,603: %UNICON-INFO: connection to R1
+
+
+
+2022-01-17 05:53:20,362: %UNICON-INFO: +++ R1 logfile yaml/acl//connection_R1.txt +++
+
+2022-01-17 05:53:20,363: %UNICON-INFO: +++ Unicon plugin ios +++
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+SHA256:aQOju4dlXRaHVw4wjcs1UBUVFlAcsRZad2gXNXo++pA.
+Please contact your system administrator.
+Add correct host key in /home/devasc/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /home/devasc/.ssh/known_hosts:1
+  remove with:
+  ssh-keygen -f "/home/devasc/.ssh/known_hosts" -R "192.168.56.104"
+RSA host key for 192.168.56.104 has changed and you have requested strict checking.
+Host key verification failed.
+
+
+2022-01-17 05:53:20,520: %UNICON-INFO: +++ connection to spawn: ssh -l cisco 192.168.56.104, id: 139896677844304 +++
+
+2022-01-17 05:53:20,521: %UNICON-INFO: connection to R1
